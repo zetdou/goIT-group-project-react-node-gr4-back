@@ -1,0 +1,1 @@
+//kategorie wydatkow i przychodow
