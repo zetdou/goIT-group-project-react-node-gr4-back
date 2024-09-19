@@ -1,1 +1,1 @@
-//uruchamianiee serwera
+//uruchamianie serwera
