@@ -1,3 +1,3 @@
 w pliku env ustaw zmienne:
-PORT=_dowolny
-DB_URI=mongodb+srv://\_username_:_password_@cluster0.mongodb.net/_database_
+PORT="<"dowolny">"
+DB_URI=mongodb+srv://"<"username">":"<"password">"@cluster0.mongodb.net/"<"database">"
