@@ -1,1 +1,0 @@
-//uruchamianie serwera
