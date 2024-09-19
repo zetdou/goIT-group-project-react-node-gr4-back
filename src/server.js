@@ -1,8 +1,8 @@
 //uruchamianie serwera
 
 require("dotenv").config();
-const app = require("./src/app");
-const connectDB = require("./config/db");
+const app = require("./app");
+const connectDB = require("../config/db");
 
 const port = process.env.PORT || 3000;
 
