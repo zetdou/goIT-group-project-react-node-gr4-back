@@ -1,1 +1,19 @@
-//kategorie wydatkow i przychodow
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+const categorySchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  type: {
+    type: String,
+    enum: ["expense", "income"],
+    required: true,
+  },
+});
+
+const Category = mongoose.model("Category", categorySchema);
+
+module.exports = Category;
