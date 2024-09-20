@@ -1,1 +1,1 @@
-//rejestracja logowanie wyloogowanie odswiezanie tokena
+// wylogowanie
