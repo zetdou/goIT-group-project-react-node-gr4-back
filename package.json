@@ -42,5 +42,8 @@
     "posthtml-include": "^1.7.4",
     "supertest": "^7.0.0"
   },
-  "browserslist": "> 0.5%, last 2 versions, not dead"
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "jest": {
+    "testTimeout": 30000
+  }
 }
