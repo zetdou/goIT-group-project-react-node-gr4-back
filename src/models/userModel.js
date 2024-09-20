@@ -1,4 +1,5 @@
 //model uzytkownika mongoose
+// const { string } = require("joi");
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
@@ -10,6 +11,11 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true,
+  },
+  owner: {
+    type: String,
+    required: true,
+    unique: true,
   },
   balance: {
     type: Number,
