@@ -3,6 +3,8 @@ const bcryptjs = require("bcryptjs");
 
 async function signup(req, res, next) {
   try {
+    const { nanoid } = await import("nanoid");
+
     const { email, password } = req.body;
     const existingUser = await User.findOne({ email });
     if (existingUser) {
@@ -15,6 +17,7 @@ async function signup(req, res, next) {
     const newUser = new User({
       email,
       password: hashedPassword,
+      owner: nanoid(),
     });
 
     await newUser.save();
