@@ -21,8 +21,14 @@ const loginSchema = Joi.object({
     "any.required": "Password is required",
   }),
 });
+const refreshTokenSchema = Joi.object({
+  sid: Joi.string().required().messages({
+    "any.required": "sid is required",
+  }),
+});
 
 module.exports = {
   registerSchema,
   loginSchema,
+  refreshTokenSchema,
 };
