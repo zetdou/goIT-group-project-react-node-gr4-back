@@ -1,5 +1,6 @@
 const User = require("../../models/userModel");
 const bcryptjs = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 async function login(req, res, next) {
   try {
@@ -13,9 +14,19 @@ async function login(req, res, next) {
     if (!isMatch) {
       return res.status(403).json({ message: "Invalid email or password" });
     }
+    const payload = {
+      id: user._id,
+      email: user.email,
+      owner: user.owner,
+    };
+
+    const token = jwt.sign(payload, process.env.JWT_SECRET, {
+      expiresIn: "1h",
+    });
     res.status(200).json({
       status: "success",
       message: "Successful operation",
+      token,
       user: {
         email: user.email,
         owner: user.owner,
@@ -26,4 +37,7 @@ async function login(req, res, next) {
   }
 }
 
-module.exports = { login };
+async function logout(req, res) {
+  res.status(204).json({});
+}
+module.exports = { login, logout };
