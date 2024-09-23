@@ -6,6 +6,7 @@ const cors = require("cors");
 const passport = require("../config/passport");
 const errorHandler = require("./middleware/errorMiddleware");
 const authRoutes = require("./routes/authRoutes");
+const users = require("./routes/users");
 
 const app = express();
 const formatsLogger = app.get("env") === "development" ? "dev" : "short";
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use(passport.initialize());
 
 app.use("/auth", authRoutes);
+app.use("/user", users);
 app.use(errorHandler);
 
 module.exports = app;
